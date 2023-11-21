@@ -94,4 +94,16 @@ simpleGallery.on("shown.simplelightbox", () => {
   const overlay = document.querySelector(".sl-overlay");
     overlay.style.opacity = "";
 })
+simpleGallery.on("show.simplelightbox", () => {
+  setTimeout(() => {
+    const overlay = document.querySelector(".sl-overlay");
+    const closeBtn = document.querySelector(".sl-close");
+    const counter = document.querySelector(".sl-counter");
+    const navigationBtns = document.querySelectorAll(".sl-navigation button");
+    overlay.style.backgroundColor = "rgba(46, 47, 66, 0.80)";
+    closeBtn.style.color = "#FFF";
+    counter.style.color = "#FFF";
+    navigationBtns.forEach(btn => btn.style.color = "#FFF")
+  }, 50);
+});
 export default simpleGallery;
